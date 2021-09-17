@@ -11,13 +11,14 @@ import { ConfigService } from './config/config.service';
 
 import { AppController } from './app.controller';
 import { UserController } from './modules/user/user.controller';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule, 
     DatabaseModule, 
     UserModule, 
-    RoleModule
+    RoleModule, AuthModule
   ],
   controllers: [AppController, UserController],
   providers: [AppService],

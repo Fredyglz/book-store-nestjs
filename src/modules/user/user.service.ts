@@ -40,6 +40,7 @@ export class UserService {
         const repo = await getConnection().getRepository(Role);
         const defaultRole = await repo.findOne({where: {name: 'GENERAL'}})
         user.roles = [defaultRole];
+        
         const savedUser = await this._userRepository.save(user);
         return savedUser;
     }
