@@ -48,4 +48,13 @@ export class UserController {
     await this._userService.delete(id);
     return true;
   }
+
+  @Post('setRole/:userId/:roleId')
+  // @ROLES(['ADMIN'])
+  async setRoleToUser(
+    @Param('userId') userId: number,
+    @Param('roleId') roleId: number
+  ) {
+    return this._userService.setRoleToUser(userId, roleId);
+  }
 }
