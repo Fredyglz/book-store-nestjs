@@ -10,13 +10,14 @@ import { ConfigService } from './config/config.service';
 
 import { UserController } from './modules/user/user.controller';
 import { AuthModule } from './modules/auth/auth.module';
+import { BookModule } from './modules/book/book.module';
 
 @Module({
   imports: [
     ConfigModule, 
     DatabaseModule, 
     UserModule, 
-    RoleModule, AuthModule
+    RoleModule, AuthModule, BookModule
   ],
   controllers: [UserController]
 })

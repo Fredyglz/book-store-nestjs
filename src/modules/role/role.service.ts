@@ -6,10 +6,8 @@ import {
 import { InjectRepository } from '@nestjs/typeorm';
 import { RoleRepository } from './role.repository';
 import { Role } from './role.entity';
-import { ReadRoleDto } from './dtos/read-role.dto';
 import { plainToClass } from 'class-transformer';
-import { CreateRoleDto } from './dtos';
-import { UpdateRoleDto } from './dtos/update-role.dto';
+import { CreateRoleDto, UpdateRoleDto, ReadRoleDto } from './dtos';
 
 @Injectable()
 export class RoleService {

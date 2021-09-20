@@ -15,8 +15,7 @@ import { User } from './user.entity';
 import { Roles } from '../role/decorators/role.decorator';
 import { RoleGuard } from '../role/guards/role.guard';
 import { RoleType } from '../role/roletype.enum';
-import { ReadUserDto } from './dto/read-user.dto';
-import { UpdateUserDto } from './dto/update-user.dto';
+import { ReadUserDto, UpdateUserDto } from './dto';
 
 @Controller('users')
 export class UserController {
@@ -29,7 +28,7 @@ export class UserController {
     return this._userService.get(userId);
   }
 
-  @UseGuards(AuthGuard())
+  // @UseGuards(AuthGuard())
   @Get()
   getUsers(): Promise<ReadUserDto[]> {
     return this._userService.getAll();
