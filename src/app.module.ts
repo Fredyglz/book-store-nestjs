@@ -6,21 +6,20 @@ import { DatabaseModule } from './database/database.module';
 import { UserModule } from './modules/user/user.module';
 import { RoleModule } from './modules/role/role.module';
 
-import { AppService } from './app.service';
 import { ConfigService } from './config/config.service';
 
-import { AppController } from './app.controller';
 import { UserController } from './modules/user/user.controller';
+import { AuthModule } from './modules/auth/auth.module';
+import { BookModule } from './modules/book/book.module';
 
 @Module({
   imports: [
     ConfigModule, 
     DatabaseModule, 
     UserModule, 
-    RoleModule
+    RoleModule, AuthModule, BookModule
   ],
-  controllers: [AppController, UserController],
-  providers: [AppService],
+  controllers: [UserController]
 })
 export class AppModule {
   static port: number | string;
